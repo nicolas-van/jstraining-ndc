@@ -1,0 +1,44 @@
+
+Angular
+=======
+
+Explanation
+-----------
+
+* Angular as a framework, base application and simple templating
+
+Exercise - Install Angular
+--------------------------
+
+* Install Angular using Bower and setup your application.
+
+Explanation
+-----------
+
+* Angular controllers, $scope and templates
+
+Exercise - Simple Controller
+----------------------------
+
+* Re-code the same application you created in the "HTML Basics" part but with Angular, inside a controller.
+
+Explanation
+-----------
+
+* Angular routing and views
+
+Exercise - Multi-Pages Application
+---------------------------------
+
+* Modify your application to have multiple pages. All the pages of the application should have a common menu (you can
+  use Bootstrap's navbar).
+
+Explanation
+-----------
+
+* Angular directives as reusable components
+
+Exercise - Time Directive
+-------------------------
+
+* Create a ``<time>`` directive that displays the current time. That component should update each second.

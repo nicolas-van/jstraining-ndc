@@ -1,0 +1,31 @@
+.. JavaScript Training documentation master file, created by
+   sphinx-quickstart on Thu Nov  5 14:52:16 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+JavaScript Training
+===================
+
+
+..
+   * Basic JavaScript (1 hour)
+   * HTML basics, jQuery & Bootstrap (2 hours)
+   * Tools - Grunt, Bower, Less, etc... (1 hour)
+   * Angular (3 hours)
+   * Promises (1 hour)
+   * Kendo UI (2 hours)
+   * W100 HMI (2 hours)
+
+
+Content:
+
+.. toctree::
+   :maxdepth: 1
+
+   jsbasics
+   htmlbasics
+   tools
+   angular
+   promise
+   kendoui
+   w100hmi

@@ -1,0 +1,20 @@
+
+W100 HMI
+========
+
+Preparation
+-----------
+
+* Download the actual version of the W100-HMI application and test the connection to the dbrick.
+
+Explanation
+-----------
+
+* GageData and data.js
+
+Exercise
+--------
+
+* Make a new screen to display a grid containing the 100 last trace lines. (Use ``GageData.get_traces_history()``)
+* Make that screen update automatically as soon as new trace lines are created. (Use ``listenTrace()``)
+* Transform that screen into a generic Angular directive that can be used on multiple other screens.

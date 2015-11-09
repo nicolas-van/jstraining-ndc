@@ -1,0 +1,28 @@
+
+HTML Basics, jQuery & Bootstrap
+===============================
+
+Explanation
+-----------
+
+* bower
+* Bootstrap
+
+Exercise: Setup basic application
+---------------------------------
+
+The application should use bower to install the two basic dependencies: jQuery and Bootstrap.
+
+The application should have a base HTML file with a bootstrap menu, a container, a title and a hello world.
+
+Explanation
+-----------
+
+* Module pattern and strict mode
+* jQuery selectors, events and DOM manipulation
+
+Exercise: Dynamic application
+-----------------------------
+
+Add a little form with an input and a button. When we click on the button, we should make appear a new box containing
+the content of the input under the form and clear the input.

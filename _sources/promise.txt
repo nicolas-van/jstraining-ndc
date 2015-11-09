@@ -1,0 +1,61 @@
+
+Promises and Asynchronous Programming
+=====================================
+
+Preparation
+-----------
+
+* Change the configuration of the ``connect`` Grunt plugin to use this one:
+
+  ::
+
+        connect: {
+            server: {
+                options: {
+                    base: ['.tmp', '.'],
+                    middleware: function(connect, options, middlewares) {
+                        middlewares.unshift(function myMiddleware(req, res, next) {
+                            var url = require('url').parse(req.url, true);
+                            if (url.pathname === "/add") {
+                                res.end("" + (Number(url.query.arg1) + Number(url.query.arg2)));
+                            } else if (url.pathname === "/sub") {
+                                res.end("" + (Number(url.query.arg1) - Number(url.query.arg2)));
+                            } else if (url.pathname === "/mult") {
+                                res.end("" + (Number(url.query.arg1) * Number(url.query.arg2)));
+                            } else if (url.pathname === "/div") {
+                                res.end("" + (Number(url.query.arg1) / Number(url.query.arg2)));
+                            } else {
+                                return next();
+                            }
+                        });
+
+                        return middlewares;
+                    },
+                }
+            }
+        }
+
+Explanation
+-----------
+
+* Angular $http service
+
+Exercise
+--------
+
+* Create a button that, when we click on it, executes remotely the "2 * 3" operation and displays the result.
+
+Explanation
+-----------
+
+* Promises, chaining and parallel execution
+
+Exercises
+---------
+
+* Calculate the sum of all the numbers from 1 to 5 by calling sequentially the ``/add`` service. Display the result of
+  each operation as soon as it has finished executing.
+* Calculate the result of ``1 * 2``, ``2 * 3``, ``3 * 4``, ``4 * 5`` and ``5 * 6`` in parallel. Display the results of
+  those operations as soon as you receive them.
+* Calculate the result of ``1 * 2``, ``2 * 3``, ``3 * 4``, ``4 * 5`` and ``5 * 6`` in parallel. Display the results of
+  those operations in the correct order after all of them have finished executing.

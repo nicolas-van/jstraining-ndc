@@ -1,0 +1,32 @@
+
+Tools - Grunt, Bower, Less, etc...
+==================================
+
+Exercise - Bower
+----------------
+
+* Save the dependencies of the projet in a ``bower.json``.
+
+Explanation
+-----------
+
+* Grunt
+
+Exercise - Grunt
+----------------
+
+* Make a Grunt file with an uglify plugin to minify all the JavaScript files of the project.
+* Add a jshint plugin to check the validity of your source code and correct any mistakes your JavaScript code could
+  contain.
+* Add the ``connect`` plugin to have a local web server.
+
+Explanation
+-----------
+
+* Less
+
+Exercise - Less
+---------------
+
+* Add a less plugin to your Gruntfile, compile Bootstrap instead of including the css version and redefine the
+  body background of your application.

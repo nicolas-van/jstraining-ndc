@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaScript Basics &mdash; JavaScript Training 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="JavaScript Training 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="HTML Basics, jQuery &amp; Bootstrap" href="htmlbasics.html"/>
+        <link rel="prev" title="JavaScript Training" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> JavaScript Training
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">JavaScript Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preamble">Preamble</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-note-about-javascript">A Note about JavaScript</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-interpreter">Command Line Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-data-types">Basic Data Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#numbers">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#booleans">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strings">Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#null">Null</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undefined">Undefined</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#implicit-type-conversions">Implicit Type Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#control-structures">Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables-and-scopes">Variables and Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="htmlbasics.html">HTML Basics, jQuery &amp; Bootstrap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="htmlbasics.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htmlbasics.html#exercise-setup-basic-application">Exercise: Setup basic application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htmlbasics.html#id1">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htmlbasics.html#exercise-dynamic-application">Exercise: Dynamic application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools - Grunt, Bower, Less, etc...</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#exercise-bower">Exercise - Bower</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#exercise-grunt">Exercise - Grunt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#id1">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#exercise-less">Exercise - Less</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="angular.html">Angular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#exercise-install-angular">Exercise - Install Angular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#id1">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#exercise-simple-controller">Exercise - Simple Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#id2">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#exercise-multi-pages-application">Exercise - Multi-Pages Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#id3">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular.html#exercise-time-directive">Exercise - Time Directive</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="promise.html">Promises and Asynchronous Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="promise.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="promise.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="promise.html#exercise">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="promise.html#id1">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="promise.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kendoui.html">Kendo UI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kendoui.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendoui.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendoui.html#exercise">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendoui.html#id1">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kendoui.html#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="w100hmi.html">W100 HMI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="w100hmi.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w100hmi.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w100hmi.html#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">JavaScript Training</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>JavaScript Basics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/jsbasics.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="javascript-basics">
+<h1>JavaScript Basics<a class="headerlink" href="#javascript-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preamble">
+<h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-note-about-javascript">
+<h3>A Note about JavaScript<a class="headerlink" href="#a-note-about-javascript" title="Permalink to this headline">¶</a></h3>
+<p>JavaScript is the language understood by web browsers, and thus a de-facto language for web applications.</p>
+<p>Objectively, JavaScript is a programming language with multiple flaws. It was designed by Netscape in 1995 for
+commercial purpose by a small team with a short development time. It was not meant to be the most universal programming
+language ever. It has a lot a initial design problems and, due to backward-compatibility necessity, it was not really
+improved since its creation.</p>
+<p>Still, despite its problems, the core of the language contains good ideas allowing a lot of creativity for programmers.
+(like prototype-based programming and functional programming.) Most of JavaScript&#8217;s shortcomings can be negated by using
+correct patterns and proper tools. It also has strong advantages on its own. First of all, JavaScript is very
+fast. Fast to start, fast to run and fast to deploy. The ability to use HTML and the multimedia API of the browser also
+allows to create very nice looking applications and good productivity compared to desktop application programming. The
+decisive point is probably the fact that JavaScript virtual machines are available on 99.99% of the desktop computers on
+the planet.</p>
+<p>In the end, if you&#8217;re a good programmer with good libraries, the advantages far outweigh the inconveniences and
+make JavaScript and the browser one of the best environments to develop applications for the general public.</p>
+</div>
+</div>
+<div class="section" id="command-line-interpreter">
+<h2>Command Line Interpreter<a class="headerlink" href="#command-line-interpreter" title="Permalink to this headline">¶</a></h2>
+<p>To test the basic features of the language, we recommend you begin by using a command line interpreter. Most
+modern web browsers will provide a console to use JavaScript, but it is recommended to use <a class="reference external" href="http://www.google.com/chrome/">Google Chrome</a> for OpenERP&#8217;s web module development. This guide will assume you use this particular
+browser.</p>
+<p>Once Chrome is installed, open any web page then go in the configuration menu of Chrome and select <em>Tools &gt; Developer
+Tools</em> or use <em>Ctrl + Shift + I</em>. This should reveal a new section at the bottom of the window. Now select the
+<em>Console</em> panel. You should have a screen looking like this:</p>
+<a class="reference internal image-reference" href="_images/chrome.png"><img alt="_images/chrome.png" class="align-center" src="_images/chrome.png" style="width: 70%;" /></a>
+<p>You will now be able to test the code snippets given in the next part.</p>
+</div>
+<div class="section" id="basic-data-types">
+<h2>Basic Data Types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="numbers">
+<h3>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&gt; ((3 + 3) / 1.5) * 2;
+8
+</pre></div>
+</div>
+<p>Please note <strong>JavaScript do not have integers</strong>. All numbers are floats. This is a major difference with most other
+programming languages. This has impacts on some mathematical operations. Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; 3 / 2;
+1.5
+</pre></div>
+</div>
+<p>In C, Java or Python the result would be 1, except if one of the members was casted to float or explicitly declared as
+float using a different notation (<code class="docutils literal"><span class="pre">2.0</span></code> or <code class="docutils literal"><span class="pre">2.</span></code>).</p>
+</div>
+<div class="section" id="booleans">
+<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&gt; 5 == 2;
+false
+&gt; true == true;
+true
+&gt; true == false;
+false
+</pre></div>
+</div>
+<p>As simple as booleans can be.</p>
+</div>
+<div class="section" id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&gt; &quot;Hello World&quot;;
+&quot;Hello World&quot;
+&gt; &#39;Hello World&#39;;
+&quot;Hello World&quot;
+</pre></div>
+</div>
+<p>Strings can be declared using single quotes or double quotes. Like most high level programming languages, strings have
+methods for many operations. For more information on JavaScript Strings, see the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Strings API (MDN)</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; &quot;Hello World&quot;.charAt(3);
+&quot;l&quot;
+&gt; &quot;Hello World&quot;.slice(6, 9);
+&quot;Wor&quot;
+&gt; &quot;Hello World&quot;.length;
+11
+</pre></div>
+</div>
+<p>Strings also use the + operator for concatenation:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; &quot;Hello &quot; + &quot;World&quot;;
+&quot;Hello World&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="null">
+<h3>Null<a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var x = null;
+&gt; x;
+null
+</pre></div>
+</div>
+<p>Similar to a lot of languages.</p>
+</div>
+<div class="section" id="undefined">
+<h3>Undefined<a class="headerlink" href="#undefined" title="Permalink to this headline">¶</a></h3>
+<p>If you declare a variable but do not assign it, it will have a special value. This value is not the same as <code class="docutils literal"><span class="pre">null</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var x;
+&gt; x;
+undefined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="implicit-type-conversions">
+<h2>Implicit Type Conversions<a class="headerlink" href="#implicit-type-conversions" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript provides automatic type conversion for most operators.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; &quot;Test&quot; + 5;
+&quot;Test5&quot;
+</pre></div>
+</div>
+<p>Practically, this behavior can be useful in some cases, like implicit conversion to strings. But it can also lead to
+strange behavior, particularly with comparisons. Here are some examples:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; &quot;5&quot; == 5;
+true
+&gt; &quot;&quot; == 0;
+true
+&gt; &quot;0&quot; == false;
+true
+</pre></div>
+</div>
+<p>Like in C, numbers are considered as <code class="docutils literal"><span class="pre">false</span></code> if they are <code class="docutils literal"><span class="pre">0</span></code> and <code class="docutils literal"><span class="pre">true</span></code> otherwise. Strings are considered as
+<code class="docutils literal"><span class="pre">true</span></code> except if they are empty.</p>
+<p>During any operations involving different types, multiple castings can occur which are quite complicated to predict for
+the programmer. That&#8217;s why it is considered safer to always use the <code class="docutils literal"><span class="pre">===</span></code> and <code class="docutils literal"><span class="pre">!==</span></code> operators.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; &quot;5&quot; === 5;
+false
+&gt; &quot;&quot; === 0;
+false
+&gt; &quot;0&quot; === false;
+false
+</pre></div>
+</div>
+<p>These operators are more strict than the simple comparison operators above: they don&#8217;t just compare the value, but also
+the type of the variables.</p>
+</div>
+<div class="section" id="control-structures">
+<h2>Control Structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript provides the same control structures than C. (To test with Chrome&#8217;s console, you can use <em>Shift + Enter</em> to
+enter multiple lines of code.) More info on JavaScript control structures and statements can be found on
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements">Statements (MDN)</a></p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; if (true == true) {
+      console.log(&quot;true is true&quot;);
+  }
+true is true
+&gt; var x = 0;
+&gt; while (x &lt; 3) {
+      console.log(x);
+      x++;
+  }
+1
+2
+3
+&gt; for (var i = 5; i &lt; 8; i++) {
+      console.log(i);
+  }
+5
+6
+7
+</pre></div>
+</div>
+<p>JavaScript also provides a specialized for structure to loop on objects. (<code class="docutils literal"><span class="pre">for</span> <span class="pre">(...</span> <span class="pre">in</span> <span class="pre">...)</span></code>.) It should be noted
+that, due to bad conception of the language involving variable scopes, functional programming, performance issues and
+bad behavior with arrays, almost all experienced programmers will avoid the usage of that structure and rather use
+functional programming functions provided by JavaScript or external libraries.</p>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions can be declared like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; function talk() {
+      console.log(&quot;Hello World&quot;);
+  }
+&gt; talk();
+Hello World
+</pre></div>
+</div>
+<p>In JavaScript functions are also complete types. They can be declared as expressions and stored in variables.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var talk = function() {
+      console.log(&quot;Hello World&quot;);
+  }
+&gt; talk();
+Hello World
+&gt; var talkAgain = talk;
+&gt; talkAgain();
+Hello World
+&gt; function executeFunc(func) {
+      func();
+  }
+&gt; executeFunc(talk);
+Hello World
+</pre></div>
+</div>
+<p>Function arguments are declared like in most dynamically typed languages: without types. Please note that the JavaScript
+virtual machine never checks the number of arguments when a function is called. If there are more arguments the function
+will be called anyway. If there are fewer arguments the remaining ones will be <code class="docutils literal"><span class="pre">undefined</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var print = function(a, b) {
+      console.log(a);
+      console.log(b);
+  }
+&gt; print(&quot;hello&quot;);
+hello
+undefined
+&gt; print(&quot;nice&quot;, &quot;to&quot;, &quot;meet&quot;, &quot;you&quot;);
+nice
+to
+</pre></div>
+</div>
+</div>
+<div class="section" id="variables-and-scopes">
+<h2>Variables and Scopes<a class="headerlink" href="#variables-and-scopes" title="Permalink to this headline">¶</a></h2>
+<p>A variable is declared by preceding its name by <code class="docutils literal"><span class="pre">var</span></code>. Unlike C++ and Java, a scope is not defined by the existence of
+braces. A scope is defined by a function.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; function func1() {
+      var x; // x is inside the scope of func1
+      function func2() { // func2 is inside the scope of func1
+          var y; // y is in the scope of func2
+      }
+      while (true) {
+          var z; // z is not in a new scope, it is the same scope than x
+      }
+  }
+</pre></div>
+</div>
+<p>In this example, the variable <code class="docutils literal"><span class="pre">z</span></code> will not be re-created at each iteration of the <code class="docutils literal"><span class="pre">while</span></code> loop. It is always the
+same variable for each iteration because the variable is defined in the scope of <code class="docutils literal"><span class="pre">func1</span></code>.</p>
+<p>Functions can also access all previously declared variables. We call them closures when they do so.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; function func1() {
+      var x = &quot;hello&quot;;
+      function func2() {
+          console.log(x);
+      }
+      func2();
+      x = &quot;world&quot;;
+      func2();
+  }
+&gt; func1();
+hello
+world
+</pre></div>
+</div>
+<p>When a variable is declared directly at the root of a source file, not inside any function, it exists in the global
+scope. The global scope is not a scope specific to each source file. <em>The global scope is shared amongst all pieces of
+JavaScript code that are executed by an instance of the virtual machine</em>, which means on the same web page.</p>
+<div class="highlight-python"><div class="highlight"><pre>// file source1.js
+var x = &quot;value1&quot;;
+
+// file source2.js
+var x = &quot;value2&quot;;
+</pre></div>
+</div>
+<p>If those two files are loaded by the same web page the variable <code class="docutils literal"><span class="pre">x</span></code> can only have one value, <code class="docutils literal"><span class="pre">&quot;value1&quot;</span></code> or
+<code class="docutils literal"><span class="pre">&quot;value2&quot;</span></code>, depending on which file was loaded last. This is obviously a problem and it can be solved using the Module
+Pattern (see later).</p>
+</div>
+<div class="section" id="arrays">
+<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
+<p>The syntax for arrays is quite similar to other dynamic languages:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var array = [&quot;hello&quot;, &quot;world&quot;];
+&gt; for (var i = 0; i &lt; array.length; i++) {
+      console.log(array[i]);
+  }
+hello world
+</pre></div>
+</div>
+<p>Please note the above syntax to iterate on arrays works but is prone to programming errors due to problems with scopes
+in JavaScript, for real use-cases you should use <code class="docutils literal"><span class="pre">Array.forEach()</span></code> or a similar function provided by a third-party
+library.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var array = [&quot;hello&quot;, &quot;world&quot;];
+&gt; array.forEach(function(elem) {
+      console.log(elem);
+  });
+hello world
+</pre></div>
+</div>
+<p>Like strings, arrays have methods for various operations:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var array = [];
+&gt; array.push(&quot;banana&quot;); // adds an element at the end
+&gt; array.push(&quot;tomato&quot;);
+&gt; array;
+[&quot;banana&quot;, &quot;tomato&quot;]
+&gt; array.pop(); // removes the last element and returns it
+&quot;tomato&quot;
+&gt; array;
+[&quot;banana&quot;]
+</pre></div>
+</div>
+<p>For more information on JavaScript arrays, see <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays (MDN)</a></p>
+</div>
+<div class="section" id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+<p>Object-oriented programming is possible in JavaScript, but it is very different compared to most other programming
+languages (except if you&#8217;re familiar with Lua).</p>
+<p>First of all, objects are dictionaries and dictionaries are objects. Javascript makes no distinction between the two.
+The syntax is similar to Python&#8217;s dictionaries, but has alternative syntactic sugar depending if you prefer to use a
+dictionary-like or an object-like syntax. Demonstration:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var obj = {
+      &quot;key1&quot;: &quot;hello&quot;, // dictionary-like declaration
+      key2: &quot;world&quot;, // object-like declaration
+  };
+&gt; console.log(obj[&quot;key1&quot;]); // dictionary-like lookup
+hello
+&gt; console.log(obj.key2); // object-like lookup
+world
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">obj[&quot;key&quot;]</span></code> and <code class="docutils literal"><span class="pre">obj.key</span></code> have the exact same meaning. The first one will, by convention, be mostly used if you
+want to make a lookup in a dictionary. The second one will be mostly used to access an object&#8217;s attribute.</p>
+<p>Methods can simply be defined by putting a function inside an object:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var person = {
+      name: &quot;John Smith&quot;,
+      presentYourself: function() {
+          return &quot;Hello, my name is &quot; + this.name;
+      },
+  };
+&gt; person.presentYourself();
+&quot;Hello, my name is John Smith&quot;
+&gt; person.name = &quot;John Doe&quot;;
+&gt; person.presentYourself();
+&quot;Hello, my name is John Doe&quot;
+</pre></div>
+</div>
+<p>In JavaScript, each function has an additional, implicitly declared variable called <code class="docutils literal"><span class="pre">this</span></code>. When
+a method is called on an object (using the usual <code class="docutils literal"><span class="pre">object.method(arguments...)</span></code> syntax), the <code class="docutils literal"><span class="pre">this</span></code> variable will
+be a reference to the current object.</p>
+<p>In the above example, we define a unique object containing all the attributes and methods necessary to make it work. But
+that&#8217;s not how most programming languages will handle object-oriented programming. They have a concept of class. A class
+will contain the properties common to all its instances. There are no classes in JavaScript but it is possible to
+reproduce that concept using <em>prototypes</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; var Person = function() { // this function will represent a class &quot;Person&quot; and server as a constructor
+      this.name = &quot;JohnSmith&quot;;
+  };
+&gt; Person.prototype.presentYourself: function() { // we add a method to the prototype of our class
+      return &quot;Hello, my name is &quot; + this.name;
+  };
+&gt; var person = new Person();
+&gt; person.presentYourself();
+&quot;Hello, my name is John Smith&quot;
+</pre></div>
+</div>
+<p>Since prototype-based oriented object programming is a vast subject we will not expand upon it in this guide, though you
+can easily find some information about it on Internet. There also exists multiple JavaScript libraries to ease the
+creation of classes.s</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="htmlbasics.html" class="btn btn-neutral float-right" title="HTML Basics, jQuery &amp; Bootstrap" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="JavaScript Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Nicolas Vanhoren.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

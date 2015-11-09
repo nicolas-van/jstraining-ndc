@@ -1,0 +1,42 @@
+
+Kendo UI
+========
+
+Preparation
+-----------
+
+* Install Kendo UI from the sources available on the official website, add ``kendo.all.min.js``,
+  ``kendo.common.min.css`` and ``kendo.default.min.css`` to your website.
+
+Explanation
+-----------
+
+* KendoUI grids and DataSource.
+
+Exercise
+--------
+
+* Create a file named ``content.json``. It should contain the following code:
+
+  ::
+
+      [
+          {"firstName": "John", "familyName": "Smith", "title": "Employee", "age": 31, "salary": 30000},
+          {"firstName": "Jane", "familyName": "Simpsons", "title": "Employee", "age": 29, "salary": 40000},
+          {"firstName": "Gerald", "familyName": "Obama", "title": "CEO", "age": 52, "salary": 50000},
+          {"firstName": "Charles", "familyName": "Clinton", "title": "Consultant", "age": 44, "salary": 20000},
+          {"firstName": "Tom", "familyName": "Gore", "title": "Employee", "age": 23, "salary": 25000}
+      ]
+
+* Load that file a display it in a Kendo UI grid. Each column must have a proper name. The ``salary`` column should be
+  formatted properly according to the current locale. All the columns should be sortable and filterable.
+
+Explanation
+-----------
+
+* KendoUI bar chart.
+
+Exercise
+--------
+
+* Use the same DataSource than the one previously defined and display its data it a bar chart.
